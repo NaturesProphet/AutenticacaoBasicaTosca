@@ -26,7 +26,20 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Um sistema muito básico e bastante pelado para registro de tarefas de usuários.  
+apenas duas tabelas: usuarios e tarefas.  
+A idéia aqui foi testar uma ideia muito tosca que eu tive para implementar uma autenticação simples nas rotas de uma api. 
+Ao se registrar, a senha do usuário é criptografada e armazenada no banco. Quando o usuário se autentica, a senha dele é comparada ao hash que foi registrado no banco e verifica a compatibilidade. 
+o usuário se autentica em /login, recebe um cookie, e através desse cookie ele tem acesso à suas tarefas. simples assim :p  
+
+## Banco de dados
+O sistema usa um banco simples em Postgresql. preparei um script para facilitar a vida, basta apenas ter o docker instalado.  
+
+Para subir o app com o banco configurado automaticamente:
+```bash
+npm run testdb
+npm start
+```
 
 ## Installation
 
@@ -38,6 +51,7 @@ $ npm install
 
 ```bash
 # development
+$ npm run testdb
 $ npm run start
 
 # watch mode
